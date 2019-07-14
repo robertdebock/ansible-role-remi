@@ -1,0 +1,37 @@
+---
+# tasks file for remi
+- name: install remi repository
+  package:
+    name: "{{ remi_repository }}"
+    state: present
+  when:
+    - ansible_pkg_mgr == "yum"
+    - ansible_distribution == "CentOS" or
+      ansible_distribution == "RedHat"
+  register: remi_install_remi_repository
+  until: remi_install_remi_repository is succeeded
+  retries: 3
+
+- name: trust remi key
+  rpm_key:
+    key: "{{ remi_repository_key }}"
+    state: present
+  when:
+    - ansible_pkg_mgr == "yum"
+    - ansible_distribution == "CentOS" or
+      ansible_distribution == "RedHat"
+  register: trust_remi_key
+  until: trust_remi_key is succeeded
+  retries: 3
+
+- name: enable selected remi repository
+  lineinfile:
+    path: /etc/yum.repos.d/remi-{{ item }}.repo
+    regexp: '^enabled='
+    line: 'enabled=1'
+  when:
+    - ansible_pkg_mgr == "yum"
+    - ansible_distribution == "CentOS" or
+      ansible_distribution == "RedHat"
+  with_items:
+    - php72

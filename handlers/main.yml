@@ -1,0 +1,8 @@
+---
+# handlers file for remi
+- name: restart remi
+  service:
+    name: "{{ remi_service }}"
+    state: restarted
+  when:
+    - ansible_virtualization_type != "docker"
