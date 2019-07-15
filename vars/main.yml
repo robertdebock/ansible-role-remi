@@ -1,4 +1,9 @@
 ---
 # vars file for remi
-remi_repository: "http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
+_remi_repository:
+  6: "http://rpms.remirepo.net/enterprise/remi-release-6.rpm"
+  7: "http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
+
+remi_repository: "{{ _remi_repository[ansible_distribution_major_version|int] | default('none') }}"
+
 remi_repository_key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi"
