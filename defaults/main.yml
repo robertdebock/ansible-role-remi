@@ -3,8 +3,8 @@
 
 # You can enable one or more repositories using this list.
 # remi_enabled_repositories:
-#   - php73
-#   - glpi94
+#  - php74
+#  - glpi94
 
 # The list can contain up to two from these lists:
 # - glpi91, glpi92, glpi93 or glpi94

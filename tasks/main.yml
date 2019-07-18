@@ -33,5 +33,6 @@
     - ansible_pkg_mgr == "yum"
     - ansible_distribution == "CentOS" or
       ansible_distribution == "RedHat"
+    - remi_enabled_repositories is defined
   with_items:
-    - php72
+    - "{{ remi_enabled_repositories }}"
