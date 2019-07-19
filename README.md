@@ -48,7 +48,7 @@ These variables are set in `defaults/main.yml`:
 
 # You can enable one or more repositories using this list.
 # remi_enabled_repositories:
-#  - php74
+#  - php73
 #  - glpi94
 
 # The list can contain up to two from these lists:
