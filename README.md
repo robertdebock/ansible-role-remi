@@ -103,6 +103,11 @@ This role has been tested against the following distributions and Ansible versio
 
 A single star means the build may fail, it's marked as an experimental build.
 
+Upstream version(s)
+-------------------
+
+This project [refers to a version](https://github.com/robertdebock/ansible-role-remi/blob/master/molecule/resources/playbook.yml) of [remi's repositories](https://blog.remirepo.net/pages/Config-en).
+
 Testing
 -------
 
