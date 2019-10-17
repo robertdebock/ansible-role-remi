@@ -6,8 +6,8 @@ remi
 
 Install and enable remi yum repositories on your system.
 
-<img src="https://img.shields.io/ansible/role/d/"/>
-<img src="https://img.shields.io/ansible/quality/"/>
+<img src="https://img.shields.io/ansible/role/d/42049"/>
+<img src="https://img.shields.io/ansible/quality/42049"/>
 
 Example Playbook
 ----------------
