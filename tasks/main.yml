@@ -34,5 +34,4 @@
     - ansible_distribution == "CentOS" or
       ansible_distribution == "RedHat"
     - remi_enabled_repositories is defined
-  with_items:
-    - "{{ remi_enabled_repositories }}"
+  loop: "{{ remi_enabled_repositories }}"
