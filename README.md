@@ -2,9 +2,9 @@
 
 Install and enable remi yum repositories on your system.
 
-|Travis|GitHub|Quality|Downloads|
-|------|------|-------|---------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-remi.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-remi)|[![github](https://github.com/robertdebock/ansible-role-remi/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-remi/actions)|[![quality](https://img.shields.io/ansible/quality/42049)](https://galaxy.ansible.com/robertdebock/remi)|[![downloads](https://img.shields.io/ansible/role/d/42049)](https://galaxy.ansible.com/robertdebock/remi)|
+|Travis|GitHub|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-remi.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-remi)|[![github](https://github.com/robertdebock/ansible-role-remi/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-remi/actions)|[![quality](https://img.shields.io/ansible/quality/42049)](https://galaxy.ansible.com/robertdebock/remi)|[![downloads](https://img.shields.io/ansible/role/d/42049)](https://galaxy.ansible.com/robertdebock/remi)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-remi.svg)](https://github.com/robertdebock/ansible-role-remi/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
