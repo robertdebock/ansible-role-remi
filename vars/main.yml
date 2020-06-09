@@ -1,5 +1,0 @@
----
-# vars file for remi
-remi_repository: "http://rpms.remirepo.net/enterprise/remi-release-{{ ansible_distribution_major_version|int }}.rpm"
-
-remi_repository_key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi"
