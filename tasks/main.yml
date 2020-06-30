@@ -1,5 +1,8 @@
 ---
 # tasks file for remi
+- name: include assert.yml
+  include_tasks: assert.yml
+
 - name: install remi repository
   package:
     name: "{{ remi_repository }}"

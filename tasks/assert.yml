@@ -1,0 +1,20 @@
+---
+- name: test if remi_enabled_repositories is set correctly
+  assert:
+    that:
+      - remi_enabled_repositories | length > 0
+      - remi_enabled_repositories is iterable
+  when:
+    - remi_enabled_repositories is defined
+
+- name: test if item in remi_enabled_repositories is set correctly
+  assert:
+    that:
+      - item is defined
+      - item | length > 0
+      - item | length <= 2
+      - item in ["glpi91", "glpi92", "glpi93", "glpi94", "php54", "php70", "php71", "php72", "php73"]
+  loop: "{{ remi_enabled_repositories }}"
+  when:
+    - remi_enabled_repositories is defined
+
