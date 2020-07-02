@@ -13,6 +13,7 @@
       - item is defined
       - item | length > 0
       - item in ["glpi91", "glpi92", "glpi93", "glpi94", "php54", "php70", "php71", "php72", "php73"]
+    quiet: yes
   loop: "{{ remi_enabled_repositories }}"
   when:
     - remi_enabled_repositories is defined
