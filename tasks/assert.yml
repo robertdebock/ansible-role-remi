@@ -17,4 +17,3 @@
   loop: "{{ remi_enabled_repositories }}"
   when:
     - remi_enabled_repositories is defined
-
