@@ -11,9 +11,6 @@
     - ansible_pkg_mgr == "yum"
     - ansible_distribution == "CentOS" or
       ansible_distribution == "RedHat"
-  register: remi_install_remi_repository
-  until: remi_install_remi_repository is succeeded
-  retries: 3
 
 - name: trust remi key
   rpm_key:
@@ -23,9 +20,6 @@
     - ansible_pkg_mgr == "yum"
     - ansible_distribution == "CentOS" or
       ansible_distribution == "RedHat"
-  register: remi_trust_remi_key
-  until: remi_trust_remi_key is succeeded
-  retries: 3
 
 - name: enable selected remi repository
   lineinfile:
