@@ -4,6 +4,7 @@
     that:
       - remi_enabled_repositories | length > 0
       - remi_enabled_repositories is iterable
+    quiet: yes
   when:
     - remi_enabled_repositories is defined
 
