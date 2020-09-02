@@ -3,23 +3,23 @@
 - name: include assert.yml
   include_tasks: assert.yml
 
-- name: install remi repository
-  package:
-    name: "{{ remi_repository }}"
-    state: present
-  when:
-    - ansible_pkg_mgr == "yum"
-    - ansible_distribution == "CentOS" or
-      ansible_distribution == "RedHat"
-
 - name: trust remi key
   rpm_key:
     key: "{{ remi_repository_key }}"
     state: present
   when:
     - ansible_pkg_mgr == "yum"
-    - ansible_distribution == "CentOS" or
-      ansible_distribution == "RedHat"
+    - ansible_distribution in [ "CentOS", "RedHat" ]
+
+- name: install remi repository
+  package:
+    name: "{{ remi_repository }}"
+    state: present
+  notify:
+    - yum update cache
+  when:
+    - ansible_pkg_mgr == "yum"
+    - ansible_distribution in [ "CentOS", "RedHat" ]
 
 - name: enable selected remi repository
   lineinfile:
@@ -27,9 +27,10 @@
     regexp: '^enabled='
     line: 'enabled=1'
     mode: "0644"
+  notify:
+    - yum update cache
   when:
     - ansible_pkg_mgr == "yum"
-    - ansible_distribution == "CentOS" or
-      ansible_distribution == "RedHat"
+    - ansible_distribution in [ "CentOS", "RedHat" ]
     - remi_enabled_repositories is defined
   loop: "{{ remi_enabled_repositories }}"

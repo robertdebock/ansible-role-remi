@@ -1,0 +1,5 @@
+---
+# handlers file for remi
+- name: yum update cache
+  yum:
+    update_cache: yes
