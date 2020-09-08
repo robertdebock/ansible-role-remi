@@ -5,5 +5,6 @@
   gather_facts: no
 
   tasks:
-    - name: check if connection still works
-      ping:
+    - name: install a package from the remi repository
+      package:
+        name: php-gd
