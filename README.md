@@ -41,12 +41,18 @@ For verification `molecule/resources/verify.yml` runs after the role has been ap
 - name: Verify
   hosts: all
   become: yes
-  gather_facts: no
+  gather_facts: yes
+
+  vars:
+    _remi_verify_package:
+      Fedora: php-gd
+      CentOS: php74-gd
+    remi_verify_package: "{{ _remi_verify_package[ansible_distribution] }}"
 
   tasks:
     - name: install a package from the remi repository
       package:
-        name: php74-php-gd
+        name: "{{ remi_verify_package }}"
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -89,7 +95,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |container|tags|
 |---------|----|
 |el|7, 8|
-|fedora|all|
+|fedora|31, 32|
 
 The minimum version of Ansible required is 2.8 but tests have been done to:
 
