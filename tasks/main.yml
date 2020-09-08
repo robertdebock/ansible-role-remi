@@ -13,3 +13,6 @@
     - enable repository
   when:
     - ansible_distribution in [ "CentOS", "Fedora", "RedHat" ]
+
+- name: flush handlers
+  meta: flush_handlers
