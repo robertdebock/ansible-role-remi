@@ -19,7 +19,7 @@ This example is taken from `molecule/resources/converge.yml` and is tested on ea
   roles:
     - role: robertdebock.remi
       remi_enabled_repositories:
-        - php73
+        - php74
 ```
 
 The machine may need to be prepared using `molecule/resources/prepare.yml`:
@@ -35,17 +35,18 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
     - role: robertdebock.epel
 ```
 
-For verification `molecule/resources/verify.yml` run after the role has been applied.
+For verification `molecule/resources/verify.yml` runs after the role has been applied.
 ```yaml
 ---
 - name: Verify
   hosts: all
   become: yes
-  gather_facts: yes
+  gather_facts: no
 
   tasks:
-    - name: check if connection still works
-      ping:
+    - name: install a package from the remi repository
+      package:
+        name: php-gd
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -96,7 +97,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |---------|----|
 |amazon|2018.03|
 |el|7, 8|
-|fedora|31, 32|
 
 The minimum version of Ansible required is 2.8 but tests have been done to:
 
