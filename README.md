@@ -19,7 +19,7 @@ This example is taken from `molecule/resources/converge.yml` and is tested on ea
   roles:
     - role: robertdebock.remi
       remi_enabled_repositories:
-        - php74
+        - php73
 ```
 
 The machine may need to be prepared using `molecule/resources/prepare.yml`:
@@ -46,7 +46,7 @@ For verification `molecule/resources/verify.yml` runs after the role has been ap
   tasks:
     - name: install a package from the remi repository
       package:
-        name: php-gd
+        name: php74-php-gd
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -58,14 +58,7 @@ These variables are set in `defaults/main.yml`:
 ---
 # defaults file for remi
 
-# You can enable one or more repositories using this list.
-# remi_enabled_repositories:
-#  - php73
-#  - glpi94
-
-# The list can contain up to two from these lists:
-# - glpi91, glpi92, glpi93 or glpi94
-# - php54, php70, php71, php72 or php73
+remi_repository_selection: php74
 ```
 
 ## [Requirements](#requirements)
@@ -97,6 +90,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |---------|----|
 |amazon|2018.03|
 |el|7, 8|
+|fedora|all|
 
 The minimum version of Ansible required is 2.8 but tests have been done to:
 

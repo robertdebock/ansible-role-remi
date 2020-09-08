@@ -1,11 +1,4 @@
 ---
 # defaults file for remi
 
-# You can enable one or more repositories using this list.
-# remi_enabled_repositories:
-#  - php73
-#  - glpi94
-
-# The list can contain up to two from these lists:
-# - glpi91, glpi92, glpi93 or glpi94
-# - php54, php70, php71, php72 or php73
+remi_repository_selection: php74

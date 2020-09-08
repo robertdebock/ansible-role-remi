@@ -8,29 +8,14 @@
     key: "{{ remi_repository_key }}"
     state: present
   when:
-    - ansible_pkg_mgr == "yum"
-    - ansible_distribution in [ "CentOS", "RedHat" ]
+    - ansible_distribution in [ "CentOS", "Fedora", "RedHat" ]
 
 - name: install remi repository
   package:
     name: "{{ remi_repository }}"
     state: present
   notify:
-    - yum update cache
+    - reset php stream
+    - enable repository
   when:
-    - ansible_pkg_mgr == "yum"
-    - ansible_distribution in [ "CentOS", "RedHat" ]
-
-- name: enable selected remi repository
-  lineinfile:
-    path: /etc/yum.repos.d/remi-{{ item }}.repo
-    regexp: '^enabled='
-    line: 'enabled=1'
-    mode: "0644"
-  notify:
-    - yum update cache
-  when:
-    - ansible_pkg_mgr == "yum"
-    - ansible_distribution in [ "CentOS", "RedHat" ]
-    - remi_enabled_repositories is defined
-  loop: "{{ remi_enabled_repositories }}"
+    - ansible_distribution in [ "CentOS", "Fedora", "RedHat" ]

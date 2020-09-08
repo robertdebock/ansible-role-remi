@@ -7,4 +7,4 @@
   roles:
     - role: ansible-role-remi
       remi_enabled_repositories:
-        - php74
+        - php73

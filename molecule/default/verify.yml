@@ -7,4 +7,4 @@
   tasks:
     - name: install a package from the remi repository
       package:
-        name: php-gd
+        name: php74-php-gd
