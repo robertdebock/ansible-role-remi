@@ -46,7 +46,7 @@ For verification `molecule/resources/verify.yml` runs after the role has been ap
   vars:
     _remi_verify_package:
       Fedora: php-gd
-      CentOS: php74-gd
+      CentOS: php74-php-gd
     remi_verify_package: "{{ _remi_verify_package[ansible_distribution] }}"
 
   tasks:
