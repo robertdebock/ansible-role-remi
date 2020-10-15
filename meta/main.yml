@@ -19,7 +19,5 @@ galaxy_info:
 
   galaxy_tags:
     - remi
-    - centos
-    - redhat
 
 dependencies: []
