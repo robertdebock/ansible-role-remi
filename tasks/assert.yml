@@ -1,4 +1,5 @@
 ---
+
 - name: test if remi_repository_selection is set correctly
   assert:
     that:
