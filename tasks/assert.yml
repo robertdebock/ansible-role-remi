@@ -1,7 +1,7 @@
 ---
 
 - name: test if remi_repository_selection is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - remi_repository_selection is defined
       - remi_repository_selection is string
