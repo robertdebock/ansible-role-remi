@@ -7,7 +7,7 @@
   delegate_to: localhost
 
 - name: install remi repository
-  package:
+  ansible.builtin.package:
     name: "{{ remi_repository }}"
     state: present
     disable_gpg_check: yes
@@ -18,4 +18,4 @@
     - ansible_distribution in [ "CentOS", "Fedora", "RedHat" ]
 
 - name: flush handlers
-  meta: flush_handlers
+  ansible.builtin.meta: flush_handlers
