@@ -12,5 +12,5 @@
 
   tasks:
     - name: install a package from the remi repository
-      package:
+      ansible.builtin.package:
         name: "{{ remi_verify_package }}"
