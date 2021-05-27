@@ -12,12 +12,12 @@
 
   tasks:
     - name: install php
-      package:
+      ansible.builtin.package:
         name: php
         state: present
 
     - name: verify the version of php
-      command:
+      ansible.builtin.command:
         cmd: php --version
       register: remi_version_of_php
       failed_when:
