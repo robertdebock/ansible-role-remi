@@ -7,7 +7,8 @@
   vars:
     _remi_verify_package:
       Fedora: php-gd
-      CentOS: php74-php-gd
+      CentOS: &verify_package php74-php-gd
+      Rocky: *verify_package
     remi_verify_package: "{{ _remi_verify_package[ansible_distribution] }}"
 
   tasks:
