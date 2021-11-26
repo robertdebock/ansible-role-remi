@@ -43,7 +43,7 @@ The default values for the variables are set in `defaults/main.yml`:
 ---
 # defaults file for remi
 
-remi_repository_selection: php74
+remi_repository_selection: php81
 ```
 
 ## [Requirements](#requirements)

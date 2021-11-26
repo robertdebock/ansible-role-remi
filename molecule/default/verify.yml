@@ -7,7 +7,7 @@
   vars:
     _remi_verify_package:
       Fedora: php-gd
-      CentOS: &verify_package php74-php-gd
+      CentOS: &verify_package php81-php-gd
       Rocky: *verify_package
     remi_verify_package: "{{ _remi_verify_package[ansible_distribution] }}"
 
@@ -22,7 +22,7 @@
         cmd: php --version
       register: remi_version_of_php
       failed_when:
-        - "'PHP 7.4' not in remi_version_of_php.stdout"
+        - "'PHP 8.1' not in remi_version_of_php.stdout"
 
     - name: install a package from the remi repository
       ansible.builtin.package:
