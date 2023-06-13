@@ -16,8 +16,6 @@ molecule:
         tag: "8"
       - image: "enterpriselinux"
         tag: "latest"
-      - image: "fedora"
-        tag: "36"
 
 galaxy:
   script:
