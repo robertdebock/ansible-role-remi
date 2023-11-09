@@ -2,9 +2,9 @@
 
 Install and enable remi yum repositories on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-remi/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-remi/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-remi/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-remi)|[![quality](https://img.shields.io/ansible/quality/42049)](https://galaxy.ansible.com/robertdebock/remi)|[![downloads](https://img.shields.io/ansible/role/d/42049)](https://galaxy.ansible.com/robertdebock/remi)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-remi.svg)](https://github.com/robertdebock/ansible-role-remi/releases/)|
+|GitHub|GitLab|Downloads|Version|
+|------|------|---------|-------|
+|[![github](https://github.com/robertdebock/ansible-role-remi/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-remi/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-remi/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-remi)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/robertdebock/remi)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-remi.svg)](https://github.com/robertdebock/ansible-role-remi/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -83,7 +83,7 @@ The minimum version of Ansible required is 2.12, tests have been done to:
 - The current version.
 - The development version.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-remi/issues)
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-remi/issues).
 
 ## [License](#license)
 
