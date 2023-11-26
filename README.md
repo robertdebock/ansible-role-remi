@@ -1,4 +1,4 @@
-# Ansible role [remi](#remi)
+# [Ansible role remi](#remi)
 
 Install and enable remi yum repositories on your system.
 
