@@ -18,7 +18,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   gather_facts: true
 
   roles:
-    - role: robertdebock.remi
+    - role: ansible-role-remi
       remi_enabled_repositories: php74
 ```
 
