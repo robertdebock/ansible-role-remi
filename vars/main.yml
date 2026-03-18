@@ -1,10 +1,10 @@
 ---
 # vars file for remi
 _remi_repository:
-  Fedora: "https://rpms.remirepo.net/fedora/remi-release-{{ ansible_distribution_major_version | int }}.rpm"
-  RedHat: "https://rpms.remirepo.net/enterprise/remi-release-{{ ansible_distribution_major_version | int }}.rpm"
+  Fedora: "https://rpms.remirepo.net/fedora/remi-release-{{ ansible_facts['distribution_major_version'] | int }}.rpm"
+  RedHat: "https://rpms.remirepo.net/enterprise/remi-release-{{ ansible_facts['distribution_major_version'] | int }}.rpm"
 
-remi_repository: "{{ _remi_repository[ansible_distribution] | default(_remi_repository[ansible_os_family]) }}"
+remi_repository: "{{ _remi_repository[ansible_facts['distribution']] | default(_remi_repository[ansible_facts['os_family']]) }}"
 
 _remi_argument:
   dnf:
@@ -24,10 +24,10 @@ _remi_argument:
     php74: remi-php74
     php81: remi-php81
 
-remi_argument: "{{ _remi_argument[ansible_pkg_mgr][remi_repository_selection] }}"
+remi_argument: "{{ _remi_argument[ansible_facts['pkg_mgr']][remi_repository_selection] }}"
 
 _remi_enable_repository_command:
   default: dnf --assumeyes module install {{ remi_argument }}
   CentOS-7: yum-config-manager --enable {{ remi_argument }}
 
-remi_enable_repository_command: "{{ _remi_enable_repository_command[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_remi_enable_repository_command['default'] ) }}"
+remi_enable_repository_command: "{{ _remi_enable_repository_command[ansible_facts['distribution'] ~ '-' ~ ansible_facts['distribution_major_version']] | default(_remi_enable_repository_command['default'] ) }}"

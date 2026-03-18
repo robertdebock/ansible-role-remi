@@ -9,7 +9,7 @@
       Fedora: php-gd
       CentOS: &verify_package php81-php-gd
       Rocky: *verify_package
-    remi_verify_package: "{{ _remi_verify_package[ansible_distribution] }}"
+    remi_verify_package: "{{ _remi_verify_package[ansible_facts['distribution']] }}"
 
   tasks:
     - name: Install php
