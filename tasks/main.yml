@@ -12,6 +12,11 @@
     name: "{{ remi_repository }}"
     state: present
     disable_gpg_check: true
+  register: remi_repository_install
+  until:
+    - remi_repository_install is succeeded
+  retries: 5
+  delay: 15
   notify:
     - Reset php stream
     - Enable repository
